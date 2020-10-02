@@ -11,4 +11,4 @@ app = flask.Flask(__name__)
 @app.route('/', methods=['GET'])
 def home():
     
-        return "Home Page"
+        return render_template("index.html")
