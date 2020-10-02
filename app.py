@@ -10,4 +10,5 @@ app = flask.Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    return "I am home page and just sucked"
+    
+        return "Home Page"
