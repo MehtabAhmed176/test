@@ -8,22 +8,138 @@
   <title>Index</title>
 
 
-<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    <div class="container mt-5">
-        
-        <div class="h1">Job Descriotion Match</div>
-        <div>This is an HTML file served up by Flask</div>
+  <div class="container mt-5 p-2 border border-info">
+
+    <div class=" display-4">Job Descriotion Match Score Api</div>
+    <p class="lead">This is a RESTful API written in flask. ResumeData and Job description are send in the body of the Api with Post request returns an integer value </p>
+    <hr />
+    <div class="container ">
+      <div class="">
+        <p class="mt-5 lead h1">jobscore - Return an intger from 0 - 100</p> 
+      </div>
+     
+
+     
+      <div>
+        <div class="btn btn-warning mt-3 "> POST</div>
+        <div class="">
+        <p class="text-white bg-dark mt-2 p-3 lead">/jobscore</p> 
+      </div>
+
+      <div class="card">
+        <div class="card-header lead bg-dark text-white">
+          Api Body - <small>The body type is form-data</small>
+        </div>
+        <div class="card-body">
+          
+          <code>{
+            <br/>
+            ResumeData :  "I am Software Engineer having more than 2 years of experience",<br/>
+            
+            JD:  "We are looking for a C# developer having expereince in Micsoft Tech Stack"<br/>
+          }<code>
+          
+            <div class="mt-3">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Feild</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>ResumeData </td>
+                    <td>String</td>
+                    <td>This variable holds text of the resume as a string</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>JD</td>
+                    <td>String</td>
+                    <td>This variable holds text of the job description as a string</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            
+        </div>
+      </div>
+
+    
+
+      <div class="card mt-3 ">
+        <div class="card-header lead text-white bg-success">
+          Success 200 
+        </div>
+        <div class="card-body">
+          
+          <p class="card-text text-dark ">
+            Integer Value
+           
+          </p>
+          
+        </div>
+      </div>
+
+      <div class="card mt-3 ">
+        <div class="card-header lead text-white bg-success">
+          Example Data on Success  
+        </div>
+        <div class="card-body">
+          
+          <p class="card-text text-dark ">
+            36.71
+           
+          </p>
+          
+        </div>
+      </div>
+
+      <div class="card mt-3 ">
+        <div class="card-header lead text-white bg-dark">
+          Example with cURL
+        </div>
+        <div class="card-body">
+          
+          <code>
+        curl --location --request POST 'https://blooming-tor-44992.herokuapp.com/jobscore' \
+        --form 'ResumeData=I am Software Engineer having more than 2 years of experience
+        ' \
+        --form 'JD=We are looking for a C# developer having expereince in Micsoft Tech Stack
+          </code>
+      </div>
+           
+         
+          
+        </div>
+      </div>
+
+      </div>
     </div>
-    </body>
+  </div>
+</body>
 
 </html>
